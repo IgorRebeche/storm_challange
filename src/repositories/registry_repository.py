@@ -22,7 +22,7 @@ class RegistryRepo:
         attrsByEntity = [registry.attribute for registry in self.__registries if registry.entity == entity ]
         return set(attrsByEntity)
 
-    def findByEntityAndAtt(self, entity, attribute, isAdded):
+    def find_by_entity_and_att(self, entity, attribute, isAdded):
         registry: Registry
         return [
             registry for registry in self.__registries
@@ -31,7 +31,7 @@ class RegistryRepo:
             and registry.isAdded == isAdded
         ]
 
-    def findLastByEntityAndAtt(self, entity, attribute, isAdded):
+    def find_last_by_entity_and_att(self, entity, attribute, isAdded):
         registry: Registry
         foundRegistries = [
             registry for registry in self.__registries

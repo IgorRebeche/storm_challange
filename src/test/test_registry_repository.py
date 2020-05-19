@@ -43,8 +43,8 @@ class test_registry_repository(unittest.TestCase):
 
         self.assertEqual(actualList, expectedList)
 
-    def test_should_findByEntityAndAtt(self):
-        actualList = self.registriesRepo.findByEntityAndAtt(
+    def test_should_find_by_entity_and_att(self):
+        actualList = self.registriesRepo.find_by_entity_and_att(
             'Teste', 'telefone', True)
 
         expectedList = [
@@ -52,12 +52,12 @@ class test_registry_repository(unittest.TestCase):
             ('Teste', 'telefone', '12345-1111', True)
         ]
 
-        self.assertEqual([registry.toTuple() for registry in actualList], expectedList)
+        self.assertEqual([registry.to_tuple() for registry in actualList], expectedList)
 
-    def test_should_findLastByEntityAndAtt(self):
-        actualRegistry = self.registriesRepo.findLastByEntityAndAtt(
+    def test_should_find_last_by_entity_and_att(self):
+        actualRegistry = self.registriesRepo.find_last_by_entity_and_att(
             'Teste', 'telefone', True)
 
         expectedRegistry = ('Teste', 'telefone', '12345-1111', True)
 
-        self.assertEqual(actualRegistry.toTuple(), expectedRegistry)
+        self.assertEqual(actualRegistry.to_tuple(), expectedRegistry)

@@ -27,6 +27,6 @@ def main():
 
     create_registry = RegistryContoller(registriesRepo, schemaRepo)
     
-    print(create_registry.activeRegistries())
+    print(create_registry.active_registries())
 
 main()

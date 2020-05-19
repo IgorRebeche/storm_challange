@@ -27,11 +27,11 @@ class test_cardinality_verification(unittest.TestCase):
 
         registriesRepo = RegistryRepo(facts)
 
-        lastRegistry = registriesRepo.findLastByEntityAndAtt(
+        lastRegistry = registriesRepo.find_last_by_entity_and_att(
             entity='Teste1', attribute='endereco', isAdded=True
         )
 
-        lastRemovedRegistry = registriesRepo.findLastByEntityAndAtt(
+        lastRemovedRegistry = registriesRepo.find_last_by_entity_and_att(
             entity='Teste1', attribute='endereco', isAdded=False
         )
 
@@ -39,7 +39,7 @@ class test_cardinality_verification(unittest.TestCase):
             lastRegistry=lastRegistry, lastRemovedRegistry=lastRemovedRegistry
         )
 
-        self.assertEqual(filtredRegistry, lastRegistry.toTuple())
+        self.assertEqual(filtredRegistry, lastRegistry.to_tuple())
 
     def test_one_to_one_with_one_removal_should_return_last_active_value(self):
         facts = [
@@ -52,11 +52,11 @@ class test_cardinality_verification(unittest.TestCase):
 
         registriesRepo = RegistryRepo(facts)
 
-        lastRegistry = registriesRepo.findLastByEntityAndAtt(
+        lastRegistry = registriesRepo.find_last_by_entity_and_att(
             entity='Teste', attribute='endereco', isAdded=True
         )
 
-        lastRemovedRegistry = registriesRepo.findLastByEntityAndAtt(
+        lastRemovedRegistry = registriesRepo.find_last_by_entity_and_att(
             entity='Teste', attribute='endereco', isAdded=False
         )
 
@@ -64,7 +64,7 @@ class test_cardinality_verification(unittest.TestCase):
             lastRegistry=lastRegistry, lastRemovedRegistry=lastRemovedRegistry
         )
 
-        self.assertEqual(filtredRegistry, lastRegistry.toTuple())
+        self.assertEqual(filtredRegistry, lastRegistry.to_tuple())
 
     def test_one_to_one_with_one_assignment_and_one_removal_should_return_empty(self):
         facts = [
@@ -78,11 +78,11 @@ class test_cardinality_verification(unittest.TestCase):
 
         registriesRepo = RegistryRepo(facts)
 
-        lastRegistry = registriesRepo.findLastByEntityAndAtt(
+        lastRegistry = registriesRepo.find_last_by_entity_and_att(
             entity='Teste', attribute='endereco', isAdded=True
         )
 
-        lastRemovedRegistry = registriesRepo.findLastByEntityAndAtt(
+        lastRemovedRegistry = registriesRepo.find_last_by_entity_and_att(
             entity='Teste', attribute='endereco', isAdded=False
         )
 
@@ -102,11 +102,11 @@ class test_cardinality_verification(unittest.TestCase):
 
         registryRepo = RegistryRepo(facts)
 
-        resgistries = registryRepo.findByEntityAndAtt(
+        resgistries = registryRepo.find_by_entity_and_att(
             entity='Teste1', attribute='telefone', isAdded=True
         )
 
-        removedRegistries = registryRepo.findByEntityAndAtt(
+        removedRegistries = registryRepo.find_by_entity_and_att(
             entity='Teste1', attribute='telefone', isAdded=False
         )
 
@@ -114,7 +114,7 @@ class test_cardinality_verification(unittest.TestCase):
             registries=resgistries, removedRegistries=removedRegistries
         )
 
-        expectedList = [registry.toTuple() for registry in resgistries]
+        expectedList = [registry.to_tuple() for registry in resgistries]
         actualList = filtredRegistries
 
         self.assertEqual(actualList, expectedList)
@@ -133,11 +133,11 @@ class test_cardinality_verification(unittest.TestCase):
 
         registryRepo = RegistryRepo(facts)
 
-        resgistries = registryRepo.findByEntityAndAtt(
+        resgistries = registryRepo.find_by_entity_and_att(
             entity='Teste1', attribute='telefone', isAdded=True
         )
 
-        removedRegistries = registryRepo.findByEntityAndAtt(
+        removedRegistries = registryRepo.find_by_entity_and_att(
             entity='Teste1', attribute='telefone', isAdded=False
         )
 
@@ -150,7 +150,7 @@ class test_cardinality_verification(unittest.TestCase):
         ]
         actualList = filtredRegistries
 
-        self.assertEqual(actualList, [registry.toTuple() for registry in expectedList])
+        self.assertEqual(actualList, [registry.to_tuple() for registry in expectedList])
 
     def test_one_to_many_with_one_assignment_and_one_removal_should_return_empty(self):
         facts = [
@@ -165,11 +165,11 @@ class test_cardinality_verification(unittest.TestCase):
 
         registryRepo = RegistryRepo(facts)
 
-        resgistries = registryRepo.findByEntityAndAtt(
+        resgistries = registryRepo.find_by_entity_and_att(
             entity='Teste', attribute='telefone', isAdded=True
         )
 
-        removedRegistries = registryRepo.findByEntityAndAtt(
+        removedRegistries = registryRepo.find_by_entity_and_att(
             entity='Teste', attribute='telefone', isAdded=False
         )
 

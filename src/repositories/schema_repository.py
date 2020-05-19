@@ -17,5 +17,5 @@ class SchemaRepo:
         return [schema.cardi for schema in self.__schemas if schema.attribute == attribute]
 
     
-    def toTuple(self):
-        return [schema.toTuple() for schema in self.__schemas]
+    def to_tuple(self):
+        return [schema.to_tuple() for schema in self.__schemas]

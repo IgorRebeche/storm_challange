@@ -8,5 +8,5 @@ class Schema:
         self.cardi = cardi
         self.__CARDINALITY = 'cardinality'
 
-    def toTuple(self):
+    def to_tuple(self):
         return (self.entity, self.__CARDINALITY, self.cardinality)

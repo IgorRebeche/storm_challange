@@ -35,19 +35,19 @@ class test_registry_controller(unittest.TestCase):
             schemaRepo=self.schemaRepo
         )
 
-        actualList = registryController.listRegistries()
+        actualList = registryController.list_registries()
 
         expectedList = []
 
         self.assertEqual(actualList, expectedList)
 
-    def test_should_return_listRegistries(self):
+    def test_should_return_list_registries(self):
         registryController = RegistryContoller(
             registry_repo=self.registriesRepo,
             schemaRepo=self.schemaRepo
         )
 
-        actualList = registryController.listRegistries()
+        actualList = registryController.list_registries()
 
         expectedList = [
             ('Teste', 'telefone', '2199088-1111', False),

@@ -5,5 +5,5 @@ class Registry:
         self.value = value
         self.isAdded = isAdded
         
-    def toTuple(self):
+    def to_tuple(self):
         return (self.entity, self.attribute, self.value, self.isAdded)
