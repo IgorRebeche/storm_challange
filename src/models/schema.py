@@ -1,12 +1,11 @@
 class SCHEMA_CARDINALITIES(enumerate) :
     ONE_TO_ONE = 'ONE_TO_ONE'
-    MANY_TO_MANY = 'MANY_TO_MANY'
     ONE_TO_MANY = 'ONE_TO_MANY'
 
 class Schema:
-    def __init__(self, attribute, cardinality : SCHEMA_CARDINALITIES):
+    def __init__(self, attribute, cardi : SCHEMA_CARDINALITIES):
         self.attribute = attribute
-        self.cardinality = cardinality
+        self.cardi = cardi
         self.__CARDINALITY = 'cardinality'
 
     def toTuple(self):

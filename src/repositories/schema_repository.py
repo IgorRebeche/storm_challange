@@ -12,9 +12,9 @@ class SchemaRepo:
     def schemas(self, schemas):
         self.__schemas = schemas
 
-    def findCardinalityByAttributeName(self, attribute):
+    def findcardiByAttributeName(self, attribute):
         schema: Schema
-        return [schema.cardinality for schema in self.__schemas if schema.attribute == attribute]
+        return [schema.cardi for schema in self.__schemas if schema.attribute == attribute]
 
     
     def toTuple(self):
